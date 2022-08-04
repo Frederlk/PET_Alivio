@@ -1,37 +1,40 @@
-.title {
+%title {
     font-family: Georgia;
     font-weight: 700;
-    @include adaptiv-font(50, 30, 1);
-    line-height: 80 / 50 * 100%;
+    @include adaptiveValue("font-size", 50, 30, 1400, 767.98, 1);
+    line-height: math.div(80, 50);
 }
-.subtitle {
+%subtitle {
     font-family: Georgia;
     font-weight: 700;
-    @include adaptiv-font(30, 25, 1);
-    line-height: 45 / 30 * 100%;
+    @include adaptiveValue("font-size", 30, 25, 1400, 767.98, 1);
+    line-height: math.div(45, 30);
 }
-.text_md {
+%text_md {
     font-weight: 600;
-    @include adaptiv-font(25, 20, 1);
-    line-height: 40 / 25 * 100%;
+    @include adaptiveValue("font-size", 25, 20, 1400, 767.98, 1);
+    line-height: math.div(40, 25);
 }
-.text {
+%text {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30 / 20 * 100%;
+    font-size: rem(20);
+    line-height: math.div(30, 20);
 }
 
-.menu {
+%menu {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 24 / 20 * 100%;
+    font-size: rem(20);
+    line-height: math.div(24, 20);
 }
-.no-ac {
-    visibility: hidden;
-    opacity: 0;
+
+//========================================================================================================================================================
+
+%no-ac {
+    // visibility: hidden;
+    // opacity: 0;
 }
-.ac {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0px, 0px);
+%ac {
+    // visibility: visible;
+    // opacity: 1;
+    // transform: translate(0px, 0px);
 }

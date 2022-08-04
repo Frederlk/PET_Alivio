@@ -18,6 +18,14 @@ $fontFamily: "Lato";
 $fontSize: rem(20); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
+$primary_01: #01996d;
+$primary_02: #245852;
+$white: #fff;
+$black: #000;
+$light_01: #d6d6d6;
+$dark_01: #292929;
+$dark_02: #484848;
+$dark_03: #424242;
 $mainColor: #000; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
@@ -65,13 +73,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    &._loaded {
-        .header {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0px, 0px);
-        }
-    }
     // Прижимаем footer
     > main {
         flex: 1 1 auto;
@@ -145,20 +146,19 @@ body {
 //========================================================================================================================================================
 
 .page {
-    flex: 1 1 auto;
     &__fullscreen {
-        @include adaptiv-value("margin-bottom", 170, 40, 1);
+        @include adaptiveValue("margin-bottom", 170, 40, 1400, 767.98, 1);
     }
     &__works {
-        @include adaptiv-value("margin-bottom", 10, 20, 1);
+        @include adaptiveValue("margin-bottom", 10, 20, 1400, 767.98, 1);
     }
     &__video {
-        @include adaptiv-value("margin-bottom", 140, 40, 1);
+        @include adaptiveValue("margin-bottom", 140, 40, 1400, 767.98, 1);
     }
     &__product {
-        @include adaptiv-value("margin-bottom", 240, 180, 1);
-        @media (max-width: $md3+px) {
-            @include adaptiv-value("margin-bottom", 240, 40, 1);
+        @include adaptiveValue("margin-bottom", 240, 180, 1400, 767.98, 1);
+        @media (max-width: $mobile) {
+            @include adaptiveValue("margin-bottom", 240, 40, 1400, 767.98, 1);
         }
     }
 }

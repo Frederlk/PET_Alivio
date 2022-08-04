@@ -4,18 +4,19 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 50px;
-    min-height: 50px;
-    background-color: #01996d;
-    border: 1px solid #01996d;
-    border-radius: 4px;
-    color: #fff;
-    @extend .menu;
-    transition: all 0.2s ease 0s;
+    text-align: center;
+    padding: 0px rem(50);
+    min-height: rem(50);
+    background-color: $primary_01;
+    border: rem(1) solid $primary_01;
+    border-radius: rem(4);
+    color: $white;
+    @extend %menu;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
     @media (any-hover: hover) {
         &:hover {
-            background-color: #fff;
-            color: #01996d;
+            background-color: $white;
+            color: $primary_01;
         }
     }
 }
