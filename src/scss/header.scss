@@ -7,15 +7,15 @@
     align-items: center;
     background-color: $white;
     border-bottom: rem(1) solid $light_01;
-    @include adaptiveValue("min-height", 85, 65, 1400, 767.98, 1);
+    @include adaptiveValue("min-height", 85, 65, 1400, 991.98, 1);
     transition: opacity 0.5s ease-in-out 0s, visibility 0.5s ease-in-out 0s, transform 0.5s ease-in-out 0s;
-    transform: translate(0px, -100%);
-    opacity: 0;
-    visibility: hidden;
+    // transform: translate(0px, -100%);
+    // opacity: 0;
+    // visibility: hidden;
     .loaded & {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(0px, 0px);
+        // opacity: 1;
+        // visibility: visible;
+        // transform: translate(0px, 0px);
     }
     &__container {
         flex: 1 1 100%;
@@ -49,6 +49,12 @@
             position: relative;
             left: 0;
             transform: translate(0px, 0px);
+        }
+        @media (max-width: $mobileSmall) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: rem(40);
         }
     }
 
@@ -86,7 +92,7 @@
                 background-color: $white;
                 position: fixed;
                 width: 100%;
-                height: 84px;
+                height: rem(65);
                 top: 0;
                 left: 0;
             }
@@ -101,6 +107,9 @@
         @media (min-width: $tablet) {
             display: flex;
             align-items: center;
+        }
+        @media (max-width: $mobileSmall) {
+            text-align: center;
         }
     }
 

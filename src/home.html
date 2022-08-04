@@ -6,19 +6,21 @@
         <div class="wrapper">
             @@include('html/_header.htm',{})
             <main class="page">
-                <section class="page__fullscreen fullscreen">
+                <section data-fulscreen class="page__fullscreen fullscreen">
                     <div class="fullscreen__content">
                         <div class="fullscreen__container">
-                            <h1 class="fullscreen__title">Be aware, Manage well.</h1>
-                            <div class="fullscreen__text">
-                                Everyone experiences stress in different ways. Let Alivio guide you, in a personalized journal
-                                experience, to overcome your stress.
+                            <div class="fullscreen__body">
+                                <h1 class="fullscreen__title">Be aware, Manage well.</h1>
+                                <div class="fullscreen__text">
+                                    Everyone experiences stress in different ways. Let Alivio guide you, in a personalized journal
+                                    experience, to overcome your stress.
+                                </div>
+                                <a href="#" class="fullscreen__btn btn">Find Your Way</a>
                             </div>
-                            <a href="#" class="fullscreen__btn btn">Find Your Way</a>
                         </div>
                     </div>
-                    <div class="fullscreen__bg-ibg">
-                        <img src="@img/bg.jpg" alt="" />
+                    <div data-fulscreen class="fullscreen__bg-ibg">
+                        <img src="@img/bg.jpg" alt="background" />
                     </div>
                 </section>
                 <section class="page__works works">

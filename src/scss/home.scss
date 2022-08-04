@@ -3,13 +3,13 @@
     position: relative;
     min-height: 100vh;
     &__content {
-        @include adaptiveValue("padding-top", 175, 30, 1400, 767.98, 1);
-        @include adaptiveValue("padding-bottom", 40, 20, 1400, 767.98, 1);
+        @include adaptiveValue("padding-top", 175, 30, 1400, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 40, 20, 1400, 479.98, 1);
         position: relative;
         z-index: 2;
         @media (max-width: $tablet) {
             @media screen and (orientation: landscape) {
-                @include adaptiveValue("padding-top", 40, 20, 1400, 767.98, 1);
+                @include adaptiveValue("padding-top", 40, 20, 1400, 479.98, 1);
             }
         }
     }
@@ -28,19 +28,19 @@
     &__title {
         font-family: Georgia;
         font-weight: 700;
-        @include adaptiveValue("font-size", 65, 40, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 65, 40, 1400, 479.98, 1);
         line-height: math.div(74, 65);
         color: $primary_01;
-        @include adaptiveValue("margin-bottom", 30, 15, 1400, 767.98, 1);
-        @extend %no-ac;
-        transition: all 0.8s ease 0.5s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
-        }
-        @media (max-width: $mobile) {
-            transform: translate(0px, 50%);
-        }
+        @include adaptiveValue("margin-bottom", 30, 15, 1400, 479.98, 1);
+        // @extend %no-ac;
+        // transition: all 0.8s ease 0.5s;
+        // transform: translate(-50%, 0px);
+        // &._active {
+        //     @extend %ac;
+        // }
+        // @media (max-width: $mobile) {
+        //     transform: translate(0px, 50%);
+        // }
     }
 
     &__text {
@@ -48,34 +48,34 @@
         color: $dark_02;
         margin-right: rem(20);
         font-weight: 400;
-        @include adaptiveValue("margin-bottom", 50, 25, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 50, 25, 1400, 479.98, 1);
         @media (max-width: $mobile) {
             padding: 0;
         }
-        @extend %no-ac;
-        transition: all 0.8s ease 1s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
-        }
-        @media (max-width: $mobile) {
-            transform: translate(0px, 50%);
-        }
+        // @extend %no-ac;
+        // transition: all 0.8s ease 1s;
+        // transform: translate(-50%, 0px);
+        // &._active {
+        //     @extend %ac;
+        // }
+        // @media (max-width: $mobile) {
+        //     transform: translate(0px, 50%);
+        // }
     }
 
     &__btn {
-        @extend %no-ac;
-        transition: all 0.8s ease 1.5s;
-        transform: translate(0px, 100%);
-        &._active {
-            @extend %ac;
-        }
-        @media (max-width: $mobile) {
-            transform: translate(0px, 50%);
-        }
+        // @extend %no-ac;
+        // transition: all 0.8s ease 1.5s;
+        // transform: translate(0px, 100%);
+        // &._active {
+        //     @extend %ac;
+        // }
+        // @media (max-width: $mobile) {
+        //     transform: translate(0px, 50%);
+        // }
     }
 
-    &__bg {
+    &__bg-ibg {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -103,11 +103,11 @@
                 object-position: 70% 0;
             }
         }
-        @extend %no-ac;
-        transition: all 0.5s ease 0s;
-        &._active {
-            @extend %ac;
-        }
+        // @extend %no-ac;
+        // transition: all 0.5s ease 0s;
+        // &._active {
+        //     @extend %ac;
+        // }
     }
 }
 
@@ -122,7 +122,7 @@
         align-items: center;
         justify-content: space-between;
         margin: 0px -20px;
-        @include adaptiveValue("margin-bottom", 50, 10, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 50, 10, 1400, 479.98, 1);
         @media (max-width: $tablet) {
             margin-right: 0;
             margin-left: 0;
@@ -139,8 +139,8 @@
 
     &__body {
         display: flex;
-        @include adaptiveValue("margin-left", -47.5, 0, 1400, 767.98, 1);
-        @include adaptiveValue("margin-right", -47.5, 0, 1400, 767.98, 1);
+        @include adaptiveValue("margin-left", -47.5, 0, 1400, 479.98, 1);
+        @include adaptiveValue("margin-right", -47.5, 0, 1400, 479.98, 1);
         @media (max-width: $tablet) {
             flex-wrap: wrap;
             margin: 0px;
@@ -155,8 +155,8 @@
 
     &__column-bottom {
         flex: 0 1 33.333%;
-        @include adaptiveValue("padding-right", 47.5, 0, 1400, 767.98, 1);
-        @include adaptiveValue("padding-left", 47.5, 0, 1400, 767.98, 1);
+        @include adaptiveValue("padding-right", 47.5, 0, 1400, 479.98, 1);
+        @include adaptiveValue("padding-left", 47.5, 0, 1400, 479.98, 1);
         @media (max-width: $tablet) {
             flex: 1 1 100%;
             padding: 0px 0px;
@@ -196,7 +196,7 @@
         flex: 1 1 100%;
     }
     p {
-        @include adaptiveValue("margin-top", 40, 20, 1400, 767.98, 1);
+        @include adaptiveValue("margin-top", 40, 20, 1400, 479.98, 1);
         @extend %text;
         color: $dark_03;
         @media (max-width: $tablet) {
@@ -225,10 +225,10 @@
         transition: all 0.5s ease 0s;
         transform: translate(-50%, 0px);
         .column-bottom__subtitle {
-            @include adaptiveValue("left", 90, 20, 1400, 767.98, 1);
+            @include adaptiveValue("left", 90, 20, 1400, 479.98, 1);
         }
         .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 60, 20, 1400, 767.98, 1);
+            @include adaptiveValue("margin-bottom", 60, 20, 1400, 479.98, 1);
         }
     }
 
@@ -239,7 +239,7 @@
         &._active {
             @extend %ac;
         }
-        @include adaptiveValue("margin-top", 285, 45, 1400, 767.98, 1);
+        @include adaptiveValue("margin-top", 285, 45, 1400, 479.98, 1);
         @media (max-width: $tablet) {
             margin-top: 0;
             flex-direction: row-reverse;
@@ -254,10 +254,10 @@
             }
         }
         .column-bottom__subtitle {
-            @include adaptiveValue("left", 80, 20, 1400, 767.98, 1);
+            @include adaptiveValue("left", 80, 20, 1400, 479.98, 1);
         }
         .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 40, 20, 1400, 767.98, 1);
+            @include adaptiveValue("margin-bottom", 40, 20, 1400, 479.98, 1);
         }
     }
 
@@ -268,15 +268,15 @@
         &._active {
             @extend %ac;
         }
-        @include adaptiveValue("margin-top", 55, 20, 1400, 767.98, 1);
+        @include adaptiveValue("margin-top", 55, 20, 1400, 479.98, 1);
         @media (max-width: $tablet) {
             margin-top: 0;
         }
         .column-bottom__subtitle {
-            @include adaptiveValue("left", 125, 20, 1400, 767.98, 1);
+            @include adaptiveValue("left", 125, 20, 1400, 479.98, 1);
         }
         .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 50, 20, 1400, 767.98, 1);
+            @include adaptiveValue("margin-bottom", 50, 20, 1400, 479.98, 1);
         }
     }
     &__content {
@@ -298,14 +298,14 @@
     &__number {
         position: relative;
         font-family: Georgia;
-        @include adaptiveValue("font-size", 150, 80, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 150, 80, 1400, 479.98, 1);
         line-height: math.div(225, 150);
         color: rgba(1, 153, 109, 0.2);
     }
 
     &__subtitle {
         position: absolute;
-        @include adaptiveValue("bottom", 45, 10, 1400, 767.98, 1);
+        @include adaptiveValue("bottom", 45, 10, 1400, 479.98, 1);
         @extend %subtitle;
         color: $black;
     }
@@ -333,8 +333,8 @@
 //========================================================================================================================================================
 
 .video {
-    @include adaptiveValue("padding-top", 230, 30, 1400, 767.98, 1);
-    @include adaptiveValue("padding-bottom", 175, 30, 1400, 767.98, 1);
+    @include adaptiveValue("padding-top", 230, 30, 1400, 479.98, 1);
+    @include adaptiveValue("padding-bottom", 175, 30, 1400, 479.98, 1);
     background: $primary_02;
     &__content {
         display: flex;
@@ -373,13 +373,13 @@
     &__title {
         @extend %title;
         color: $white;
-        @include adaptiveValue("margin-bottom", 30, 10, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 30, 10, 1400, 479.98, 1);
     }
 
     &__text {
         @extend %text_md;
         color: $white;
-        @include adaptiveValue("margin-bottom", 60, 20, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 60, 20, 1400, 479.98, 1);
     }
 
     &__btn {
@@ -455,8 +455,8 @@
 
     &__control {
         position: absolute;
-        @include adaptiveValue("width", 80, 60, 1400, 767.98, 1);
-        @include adaptiveValue("height", 80, 60, 1400, 767.98, 1);
+        @include adaptiveValue("width", 80, 60, 1400, 479.98, 1);
+        @include adaptiveValue("height", 80, 60, 1400, 479.98, 1);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -494,7 +494,7 @@
     position: relative;
     background-color: rgba(1, 153, 110, 0.2);
     border-radius: 18px;
-    @include adaptiveValue("margin-left", 60, 20, 1400, 767.98, 1);
+    @include adaptiveValue("margin-left", 60, 20, 1400, 479.98, 1);
     margin-right: 20px;
     @media (max-width: $tablet) {
         margin: 0;
@@ -542,9 +542,9 @@
         align-items: center;
         position: absolute;
         background-color: $white;
-        @include adaptiveValue("min-width", 300, 350, 1400, 767.98, 1);
-        @include adaptiveValue("bottom", -75, -100, 1400, 767.98, 1);
-        @include adaptiveValue("left", -60, -20, 1400, 767.98, 1);
+        @include adaptiveValue("min-width", 300, 350, 1400, 479.98, 1);
+        @include adaptiveValue("bottom", -75, -100, 1400, 479.98, 1);
+        @include adaptiveValue("left", -60, -20, 1400, 479.98, 1);
         padding: 22px 30px 30px 30px;
         filter: drop-shadow(0px 3.62249px 18.1125px rgba(165, 165, 165, 0.25));
         @media (max-width: $tablet) {
@@ -588,7 +588,7 @@
 
     &__title {
         font-weight: 600;
-        @include adaptiveValue("font-size", 15, 24, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 15, 24, 1400, 479.98, 1);
         line-height: 157%;
         color: $black;
         padding-bottom: 7px;
@@ -608,15 +608,15 @@
 
     &__avatar {
         border-radius: 50%;
-        @include adaptiveValue("min-height", 57, 80, 1400, 767.98, 1);
-        @include adaptiveValue("min-width", 57, 80, 1400, 767.98, 1);
+        @include adaptiveValue("min-height", 57, 80, 1400, 479.98, 1);
+        @include adaptiveValue("min-width", 57, 80, 1400, 479.98, 1);
         overflow: hidden;
         background-color: rgba(1, 153, 110, 0.2);
         margin-bottom: 10px;
     }
 
     &__name {
-        @include adaptiveValue("font-size", 12, 20, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 12, 20, 1400, 479.98, 1);
         line-height: 157%;
         color: $black;
         margin-bottom: 20px;
@@ -625,7 +625,7 @@
     &__subtitle {
         font-family: Georgia;
         font-weight: 700;
-        @include adaptiveValue("font-size", 16, 24, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 16, 24, 1400, 479.98, 1);
         line-height: 157%;
         color: $black;
         margin-bottom: 15px;
@@ -635,7 +635,7 @@
     }
 
     &__item {
-        @include adaptiveValue("font-size", 12, 20, 1400, 767.98, 1);
+        @include adaptiveValue("font-size", 12, 20, 1400, 479.98, 1);
         line-height: 157%;
         color: $black;
         &:not(:last-child) {
@@ -682,7 +682,7 @@
         max-width: 530px;
         @extend %text;
         font-weight: 400;
-        @include adaptiveValue("margin-bottom", 40, 30, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 40, 30, 1400, 479.98, 1);
         color: $dark_02;
         @media (max-width: $mobile) {
             max-width: none;
