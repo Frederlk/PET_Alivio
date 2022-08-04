@@ -235,43 +235,32 @@
 //========================================================================================================================================================
 
 .video {
+    padding-left: rem(15);
+    padding-bottom: rem(15);
     @include adaptiveValue("padding-top", 230, 30, 1400, 479.98, 1);
     @include adaptiveValue("padding-bottom", 175, 30, 1400, 479.98, 1);
     background: $primary_02;
-    &__content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0px 15px;
-        @media (max-width: $mobile) {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
-        &._active {
-            .video__column {
-                @extend %ac;
-            }
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(30);
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    &__info {
     }
 
-    &__column {
+    &__player {
     }
 }
-.column-info {
-    padding: 0px 15px 0px 0px;
-    flex: 0 1 580px;
+.info-video {
+    @media (min-width: $mobile) {
+        flex: 0 1 rem(580);
+    }
     @media (max-width: $mobile) {
         flex: 1 1 100%;
-        padding: 0;
-        margin-bottom: 30px;
     }
-    @extend %no-ac;
-    transition: all 0.5s ease 0s;
-    transform: translate(-50%, 0px);
-    &__body {
-    }
-
     &__title {
         @extend %title;
         color: $white;
@@ -285,29 +274,22 @@
     }
 
     &__btn {
-        min-height: 65px;
+        min-height: rem(65);
     }
 }
 
-.column-video {
-    margin: 0px 0px 0px 15px;
-    flex: 0 1 895px;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
+.player-video {
+    @media (min-width: $mobile) {
+        flex: 0 1 rem(895);
+    }
     @media (max-width: $mobile) {
         flex: 1 1 100%;
-        margin: 0;
     }
-    @extend %no-ac;
-    transition: all 0.5s ease 0.5s;
-    transform: translate(50%, 0px);
-    &__video-row {
-        min-height: 380px;
-        padding-bottom: 57.6%;
-        @media (max-width: $mobile) {
-            min-height: 250px;
-        }
+    position: relative;
+    border-radius: rem(16);
+    overflow: hidden;
+    &__video-wrap {
+        @include adaptiveValue("height", 520, 250, 767.98, 320, 1);
     }
 
     &__video {
@@ -332,12 +314,13 @@
                 }
             }
         }
-        &._active {
+        &._playing {
             opacity: 0;
             visibility: hidden;
         }
     }
-    &__cover {
+
+    &__cover-ibg {
         position: absolute;
         width: 100%;
         height: 100%;

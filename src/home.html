@@ -88,34 +88,31 @@
                 </section>
 
                 <section class="page__video video">
-                    <div class="video__content">
-                        <div class="video__column column-info">
-                            <div class="column-info__body">
-                                <h2 class="column-info__title">Let's hear about Kayla's success story</h2>
-                                <div class="column-info__text">See how well Alivio works in a real customer’s life.</div>
-                                <a href="#" class="column-info__btn btn">Let’s get started</a>
-                            </div>
+                    <div class="video__info info-video">
+                        <h2 class="info-video__title">Let's hear about Kayla's success story</h2>
+                        <p class="info-video__text">See how well Alivio works in a real customer’s life.</p>
+                        <a href="#" class="info-video__btn btn">Let’s get started</a>
+                    </div>
+                    <div class="video__player player-video">
+                        <div class="player-video__video-wrap">
+                            <video class="player-video__video" preload="metadata" controls muted loop id="video-file">
+                                <source type="video/webm" id="source-webm" src="videos/video.webm" />
+                                <source type="video/mp4" id="source-mp4" src="videos/video.mp4" />
+                            </video>
                         </div>
-                        <div class="video__column column-video">
-                            <div class="column-video__video-row _video">
-                                <video class="column-video__video" preload="metadata" controls>
-                                    <source src="videos/video.mp4" />
-                                    <source src="videos/video.webm" />
-                                </video>
+                        <div class="player-video__thumbnail">
+                            <div class="player-video__cover-ibg">
+                                <img src="@img/video.jpg" alt="video thumbnail" />
                             </div>
-                            <div class="column-video__thumbnail">
-                                <div class="column-video__cover-ibg">
-                                    <img src="@img/video.jpg" alt="" />
-                                </div>
-                                <div class="column-video__control">
-                                    <div class="column-video__control-icon">
-                                        <img src="@img/play-white.svg" alt="" />
-                                    </div>
-                                </div>
+                            <div class="player-video__control">
+                                <button type="button" class="player-video__control-icon">
+                                    <img src="@img/play-white.svg" alt="play button" />
+                                </button>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section class="page__product product">
                     <div class="product__container">
                         <div class="product__body">
