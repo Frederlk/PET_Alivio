@@ -150,7 +150,7 @@ body {
         @include adaptiveValue("margin-bottom", 170, 40, 1400, 767.98, 1);
     }
     &__works {
-        @include adaptiveValue("margin-bottom", 10, 20, 1400, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 10, 40, 1400, 600, 1);
     }
     &__video {
         @include adaptiveValue("margin-bottom", 140, 40, 1400, 767.98, 1);

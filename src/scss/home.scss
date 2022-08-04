@@ -1,15 +1,16 @@
 .fullscreen {
-    padding-top: rem(85);
+    @include adaptiveValue("padding-top", 85, 65, 1400, 991.98, 1);
     position: relative;
     min-height: 100vh;
     &__content {
-        @include adaptiveValue("padding-top", 175, 30, 1400, 479.98, 1);
-        @include adaptiveValue("padding-bottom", 40, 20, 1400, 479.98, 1);
         position: relative;
         z-index: 2;
+        @include adaptiveValue("padding-top", 175, 30, 1400, 479.98, 1);
+        padding-bottom: rem(40);
         @media (max-width: $tablet) {
+            padding-top: 15vh;
             @media screen and (orientation: landscape) {
-                @include adaptiveValue("padding-top", 40, 20, 1400, 479.98, 1);
+                padding-top: 10vw;
             }
         }
     }
@@ -32,15 +33,6 @@
         line-height: math.div(74, 65);
         color: $primary_01;
         @include adaptiveValue("margin-bottom", 30, 15, 1400, 479.98, 1);
-        // @extend %no-ac;
-        // transition: all 0.8s ease 0.5s;
-        // transform: translate(-50%, 0px);
-        // &._active {
-        //     @extend %ac;
-        // }
-        // @media (max-width: $mobile) {
-        //     transform: translate(0px, 50%);
-        // }
     }
 
     &__text {
@@ -52,27 +44,9 @@
         @media (max-width: $mobile) {
             padding: 0;
         }
-        // @extend %no-ac;
-        // transition: all 0.8s ease 1s;
-        // transform: translate(-50%, 0px);
-        // &._active {
-        //     @extend %ac;
-        // }
-        // @media (max-width: $mobile) {
-        //     transform: translate(0px, 50%);
-        // }
     }
 
     &__btn {
-        // @extend %no-ac;
-        // transition: all 0.8s ease 1.5s;
-        // transform: translate(0px, 100%);
-        // &._active {
-        //     @extend %ac;
-        // }
-        // @media (max-width: $mobile) {
-        //     transform: translate(0px, 50%);
-        // }
     }
 
     &__bg-ibg {
@@ -103,11 +77,6 @@
                 object-position: 70% 0;
             }
         }
-        // @extend %no-ac;
-        // transition: all 0.5s ease 0s;
-        // &._active {
-        //     @extend %ac;
-        // }
     }
 }
 
@@ -118,181 +87,91 @@
     }
 
     &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0px -20px;
-        @include adaptiveValue("margin-bottom", 50, 10, 1400, 479.98, 1);
-        @media (max-width: $tablet) {
-            margin-right: 0;
-            margin-left: 0;
-            flex-wrap: wrap;
+        @include adaptiveValue("margin-bottom", 50, 10, 1400, 767.98, 1);
+        @media (min-width: $tablet) {
+            display: flex;
+            justify-content: space-between;
+            gap: rem(40);
         }
     }
 
     &__column-top {
-        padding: 0px 20px;
-        @media (max-width: $tablet) {
-            padding: 0;
-        }
     }
 
     &__body {
-        display: flex;
-        @include adaptiveValue("margin-left", -47.5, 0, 1400, 479.98, 1);
-        @include adaptiveValue("margin-right", -47.5, 0, 1400, 479.98, 1);
-        @media (max-width: $tablet) {
-            flex-wrap: wrap;
-            margin: 0px;
+        display: grid;
+        @media (min-width: $tablet) {
+            grid-template-columns: repeat(3, 1fr);
         }
-
-        &._active {
-            .column-bottom {
-                @extend %ac;
-            }
+        @media (min-width: em(600)) {
+            @include adaptiveValue("gap", 95, 40, 1400, 600, 1);
         }
     }
 
     &__column-bottom {
-        flex: 0 1 33.333%;
-        @include adaptiveValue("padding-right", 47.5, 0, 1400, 479.98, 1);
-        @include adaptiveValue("padding-left", 47.5, 0, 1400, 479.98, 1);
-        @media (max-width: $tablet) {
-            flex: 1 1 100%;
-            padding: 0px 0px;
-        }
     }
 }
+
 .top-title {
-    flex: 0 1 625px;
-    @media (max-width: $tablet) {
-        flex: 1 1 100%;
+    @media (min-width: $tablet) {
+        flex: 0 1 rem(625);
     }
     &__subtile {
         @extend %text_md;
         color: $dark_03;
-        @extend %no-ac;
-        transition: all 0.5s ease 0s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
-        }
     }
 
     &__title {
         @extend %title;
         color: $primary_01;
-        @extend %no-ac;
-        transition: all 0.5s ease 0.5s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
-        }
     }
 }
+
 .top-text {
-    flex: 0 1 710px;
-    @media (max-width: $tablet) {
-        flex: 1 1 100%;
+    @media (min-width: $tablet) {
+        flex: 0 1 rem(710);
     }
-    p {
-        @include adaptiveValue("margin-top", 40, 20, 1400, 479.98, 1);
-        @extend %text;
-        color: $dark_03;
-        @media (max-width: $tablet) {
-            margin-top: 20px;
-        }
-    }
-    @extend %no-ac;
-    transition: all 0.5s ease 1s;
-    transform: translate(50%, 0px);
-    &._active {
-        @extend %ac;
-    }
+    @include adaptiveValue("padding-top", 58, 20, 1400, 600, 1);
+    @extend %text;
+    color: $dark_03;
 }
 
 .column-bottom {
-    margin-bottom: 40px;
+    @media (min-width: $tablet) {
+        margin-bottom: rem(40);
+    }
     @media (max-width: $tablet) {
-        flex-wrap: wrap;
         display: flex;
+        gap: rem(30);
     }
-    @media (max-width: $mobile) {
-        margin-bottom: 20px;
+    @media (max-width: em(600)) {
+        flex-wrap: wrap;
     }
-    &_first {
-        @extend %no-ac;
-        transition: all 0.5s ease 0s;
-        transform: translate(-50%, 0px);
-        .column-bottom__subtitle {
-            @include adaptiveValue("left", 90, 20, 1400, 479.98, 1);
-        }
-        .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 60, 20, 1400, 479.98, 1);
-        }
+    &_1 {
     }
-
-    &_second {
-        @extend %no-ac;
-        transition: all 0.8s ease 0.5s;
-        transform: translate(0px, -50%);
-        &._active {
-            @extend %ac;
+    &_2 {
+        @media (min-width: $tablet) {
+            @include adaptiveValue("margin-top", 285, 45, 1400, 479.98, 1);
         }
-        @include adaptiveValue("margin-top", 285, 45, 1400, 479.98, 1);
         @media (max-width: $tablet) {
-            margin-top: 0;
             flex-direction: row-reverse;
         }
-        .column-bottom__content {
-            @media (max-width: $tablet) {
-                padding-right: 0;
-                padding-left: 20px;
-            }
-            @media (max-width: $mobile) {
-                padding: 0;
-            }
-        }
-        .column-bottom__subtitle {
-            @include adaptiveValue("left", 80, 20, 1400, 479.98, 1);
-        }
-        .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 40, 20, 1400, 479.98, 1);
+    }
+    &_3 {
+        @media (min-width: $tablet) {
+            @include adaptiveValue("margin-top", 55, 20, 1400, 479.98, 1);
         }
     }
 
-    &_third {
-        @extend %no-ac;
-        transition: all 0.5s ease 1s;
-        transform: translate(50%, 0px);
-        &._active {
-            @extend %ac;
-        }
-        @include adaptiveValue("margin-top", 55, 20, 1400, 479.98, 1);
-        @media (max-width: $tablet) {
-            margin-top: 0;
-        }
-        .column-bottom__subtitle {
-            @include adaptiveValue("left", 125, 20, 1400, 479.98, 1);
-        }
-        .column-bottom__text {
-            @include adaptiveValue("margin-bottom", 50, 20, 1400, 479.98, 1);
-        }
-    }
     &__content {
         @media (max-width: $tablet) {
-            flex: 0 1 55%;
-            padding-right: 20px;
-        }
-        @media (max-width: $mobile) {
-            flex: 1 1 100%;
-            padding: 0;
+            flex: 1 1 auto;
         }
     }
 
     &__top {
         position: relative;
-        margin: 0px 0px 10px 0px;
+        padding-bottom: rem(10);
     }
 
     &__number {
@@ -308,23 +187,46 @@
         @include adaptiveValue("bottom", 45, 10, 1400, 479.98, 1);
         @extend %subtitle;
         color: $black;
+        @include adaptiveValue("left", 60, 20, 991.98, 479.98, 1);
+        @media (min-width: $tablet) {
+            .column-bottom_1 & {
+                left: rem(90);
+            }
+            .column-bottom_2 & {
+                left: rem(80);
+            }
+            .column-bottom_3 & {
+                left: rem(125);
+            }
+        }
     }
 
     &__text {
         @extend %text;
         color: $dark_03;
+        @media (min-width: em(600)) {
+            .column-bottom_1 & {
+                @include adaptiveValue("margin-bottom", 60, 20, 1400, 479.98, 1);
+            }
+            .column-bottom_2 & {
+                @include adaptiveValue("margin-bottom", 40, 20, 1400, 479.98, 1);
+            }
+            .column-bottom_3 & {
+                @include adaptiveValue("margin-bottom", 50, 20, 1400, 479.98, 1);
+            }
+        }
     }
 
-    &__image {
+    &__image-ibg {
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: rem(12);
         padding-bottom: 125%;
-        min-height: 250px;
+        min-height: rem(250);
         @media (max-width: $tablet) {
-            flex: 0 1 45%;
-            padding: 0px 0px 45% 0px;
+            flex: 0 0 50%;
+            padding-bottom: 45%;
         }
-        @media (max-width: $mobile) {
+        @media (max-width: em(600)) {
             flex: 1 1 100%;
         }
     }
