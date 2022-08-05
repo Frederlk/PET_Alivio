@@ -19,4 +19,7 @@
             color: $primary_01;
         }
     }
+    @media (max-width: $mobileSmall) {
+        width: 100%;
+    }
 }

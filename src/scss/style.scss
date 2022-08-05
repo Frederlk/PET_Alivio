@@ -156,9 +156,9 @@ body {
         @include adaptiveValue("margin-bottom", 140, 40, 1400, 767.98, 1);
     }
     &__product {
-        @include adaptiveValue("margin-bottom", 240, 180, 1400, 767.98, 1);
+        margin-bottom: rem(240);
         @media (max-width: $mobile) {
-            @include adaptiveValue("margin-bottom", 240, 40, 1400, 767.98, 1);
+            margin-bottom: rem(40);
         }
     }
 }
