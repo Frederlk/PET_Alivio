@@ -236,17 +236,18 @@
 
 .video {
     padding-left: rem(15);
-    padding-bottom: rem(15);
+    padding-right: rem(15);
     @include adaptiveValue("padding-top", 230, 30, 1400, 479.98, 1);
     @include adaptiveValue("padding-bottom", 175, 30, 1400, 479.98, 1);
-    background: $primary_02;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(30);
+    background-color: $primary_02;
+    @media (min-width: $mobile) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(30);
+    }
     @media (max-width: $mobile) {
-        flex-wrap: wrap;
-        flex-direction: column;
+        margin: 0px auto;
     }
     &__info {
     }
@@ -259,18 +260,18 @@
         flex: 0 1 rem(580);
     }
     @media (max-width: $mobile) {
-        flex: 1 1 100%;
+        margin-bottom: rem(30);
     }
     &__title {
         @extend %title;
         color: $white;
-        @include adaptiveValue("margin-bottom", 30, 10, 1400, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 30, 10, 1400, 767.98, 1);
     }
 
     &__text {
         @extend %text_md;
         color: $white;
-        @include adaptiveValue("margin-bottom", 60, 20, 1400, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 60, 20, 1400, 767.98, 1);
     }
 
     &__btn {
@@ -282,39 +283,30 @@
     @media (min-width: $mobile) {
         flex: 0 1 rem(895);
     }
-    @media (max-width: $mobile) {
-        flex: 1 1 100%;
-    }
     position: relative;
     border-radius: rem(16);
     overflow: hidden;
     &__video-wrap {
-        @include adaptiveValue("height", 520, 250, 767.98, 320, 1);
+        cursor: pointer;
+        @extend %responsiveVideo;
+        @include adaptiveValue("height", 520, 250, 991.98, 320, 1);
     }
 
     &__video {
+        background-color: $black;
     }
 
     &__thumbnail {
         cursor: pointer;
-        opacity: 1;
-        transition: all 0.3s ease 0s;
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         z-index: 10;
-        @media (min-width: $tablet) {
-            &:hover {
-                .column-video__cover {
-                    &::after {
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        &._playing {
+        opacity: 1;
+        transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+        ._playing & {
             opacity: 0;
             visibility: hidden;
         }

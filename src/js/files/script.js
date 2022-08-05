@@ -7,13 +7,15 @@ if (document.querySelector(".player-video")) {
     const videoThumb = document.querySelector(".player-video");
     const videoFile = document.getElementById("video-file");
 
-    videoThumb.addEventListener("click", function (e) {
-        if (videoThumb.classList.contains("_playing") && videoFile.paused) {
-            videoFile.play();
-            videoThumb.classList.add("_playing");
-        } else {
-            videoThumb.classList.remove("_playing");
-            videoFile.pause();
+    document.addEventListener("click", function (e) {
+        if (e.target.closest(".player-video")) {
+            if (videoThumb.classList.contains("_playing")) {
+                videoFile.pause();
+                videoThumb.classList.remove("_playing");
+            } else {
+                videoFile.play();
+                videoThumb.classList.add("_playing");
+            }
         }
     });
 }
