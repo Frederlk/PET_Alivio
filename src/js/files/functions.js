@@ -39,30 +39,7 @@ export let isMobile = {
         return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
     },
 };
-/* Добавление класса touch для HTML если браузер мобильный */
-export function addTouchClass() {
-    // Добавление класса _touch для HTML если браузер мобильный
-    if (isMobile.any()) document.documentElement.classList.add("touch");
-}
-// Добавление loaded для HTML после полной загрузки страницы
-export function addLoadedClass() {
-    window.addEventListener("load", function () {
-        setTimeout(function () {
-            document.documentElement.classList.add("loaded");
-        }, 0);
-    });
-}
-// Получение хеша в адресе сайта
-export function getHash() {
-    if (location.hash) {
-        return location.hash.replace("#", "");
-    }
-}
-// Указание хеша в адресе сайта
-export function setHash(hash) {
-    hash = hash ? `#${hash}` : window.location.href.split("#")[0];
-    history.pushState("", "", hash);
-}
+
 // Учет плавающей панели на мобильных устройствах при 100vh
 export function fullVHfix() {
     const fullScreens = document.querySelectorAll("[data-fullscreen]");
@@ -159,16 +136,12 @@ export function menuClose() {
 //================================================================================================================================================================================================================================================================================================================
 // Прочие полезные функции ================================================================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================================================================
+
 // Уникализация массива
 export function uniqArray(array) {
     return array.filter(function (item, index, self) {
         return self.indexOf(item) === index;
     });
-}
-// Функция получения индекса внутри родителя
-export function indexInParent(parent, element) {
-    const array = Array.prototype.slice.call(parent.children);
-    return Array.prototype.indexOf.call(array, element);
 }
 // Обработа медиа запросов из атрибутов
 export function dataMediaQueries(array, dataSetValue) {
@@ -219,4 +192,3 @@ export function dataMediaQueries(array, dataSetValue) {
         }
     }
 }
-//================================================================================================================================================================================================================================================================================================================

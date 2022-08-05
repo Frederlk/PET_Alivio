@@ -1,5 +1,5 @@
 .footer {
-    background: $primary_02;
+    background-color: $primary_02;
     @include adaptiveValue("padding-top", 95, 30, 1400, 767.98, 1);
     @include adaptiveValue("padding-bottom", 145, 30, 1400, 767.98, 1);
     @media (max-width: $mobileSmall) {
@@ -9,30 +9,19 @@
     }
 
     &__logo {
-        @include adaptiveValue("margin-bottom", 60, 25, 1400, 767.98, 1);
+        display: block;
+        @include adaptiveValue("margin-bottom", 60, 30, 991.98, 479.98, 1);
         img {
             max-width: 100%;
-        }
-        @extend %no-ac;
-        transition: all 0.8s ease 0s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
         }
     }
 
     &__list {
-        @extend %no-ac;
-        transition: all 0.8s ease 0.5s;
-        transform: translate(-50%, 0px);
-        &._active {
-            @extend %ac;
-        }
     }
 
     &__item {
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 60, 15, 1400, 767.98, 1);
+            @include adaptiveValue("margin-bottom", 60, 15, 991.98, 479.98, 1);
         }
     }
 
