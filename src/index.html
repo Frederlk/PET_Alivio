@@ -1,137 +1,153 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Верстка «NEW_PROJECT_NAME»</title>
-    </head>
-    <body>
-        <div class="rootpage">
-            <h1>«NEW_PROJECT_NAME»</h1>
-            <div class="rootpage__info">Project Features</div>
-            <h2>Pages:</h2>
-            <ol class="rootpage__list">
-                <li><a target="_blank" href="home.html">Home Page</a></li>
-            </ol>
-            <div class="rootpage__contacts">
-                <h2>My contacts:</h2>
-                <p>Email: <a href="mailto:pertrinichshadow@gmail.com">pertrinichshadow@gmail.com</a></p>
-                <p>Phone: <a href="tel:375256474526">+375256474526</a></p>
-                <p>Social network: <a href="">Link to social network</a></p>
-            </div>
-        </div>
-    </body>
-    <style>
-        @charset "UTF-8";
-        @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-        *,
-        *::before,
-        *::after {
-            padding: 0px;
-            margin: 0px;
-            border: 0px;
-            box-sizing: border-box;
-        }
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            min-width: 320px;
-            width: 100%;
-            color: #fff;
-            background-color: #5e5373;
-        }
-        body {
-            font-family: Montserrat;
-            font-size: 100%;
-            line-height: 1;
-            font-size: 1rem;
-        }
-        a {
-            text-decoration: underline;
-            color: #ebe691;
-        }
-        a:visited {
-            text-decoration: underline;
-            color: #aaa768;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        ul li {
-            list-style: none;
-        }
-        img {
-            vertical-align: top;
-        }
-        .wrapper {
-            width: 100%;
-            min-height: 100%;
-            overflow: hidden;
-        }
-        .rootpage {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        @media (max-width: 767px) {
-            .rootpage {
-                padding: 30px 15px;
-            }
-        }
-        h1 {
-            color: #ebe691;
-            font-size: 2.5rem;
-            margin: 0px 0px 1.25rem 0px;
-        }
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.85rem;
-                margin: 0px 0px 1.25rem 0px;
-            }
-        }
-        h2 {
-            color: #ebe691;
-            font-size: 1.25rem;
-            margin: 0px 0px 1rem 0px;
-        }
-        @media (max-width: 767px) {
-            h2 {
-                font-size: 1.125rem;
-                margin: 0px 0px 1rem 0px;
-            }
-        }
-        .rootpage__info {
-            line-height: 140%;
-            margin: 0px 0px 1.5rem 0px;
-        }
+<html lang="en">
+    @@include('html/_head.htm',{ "title":"Alivio" })
 
-        .rootpage__list {
-            margin: 0px 0px 2.25rem 1.25rem;
-        }
-        .rootpage__list li:not(:last-child) {
-            margin: 0px 0px 15px 0px;
-        }
-        .rootpage__contacts,
-        .rootpage__tnx {
-            border-radius: 200px;
-            padding: 20px 65px;
-            line-height: 140%;
-        }
-        @media (max-width: 767px) {
-            .rootpage__contacts,
-            .rootpage__tnx {
-                border-radius: 40px;
-                padding: 20px;
-            }
-        }
-        .rootpage__contacts {
-            background: #32b5a4;
-        }
-        .rootpage__contacts a {
-            color: #ebe691;
-        }
-    </style>
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <section data-fulscreen class="page__fullscreen fullscreen" data-watch data-watch-once>
+                    <div class="fullscreen__content">
+                        <div class="fullscreen__container">
+                            <div class="fullscreen__body">
+                                <h1 class="fullscreen__title">Be aware, Manage well.</h1>
+                                <div class="fullscreen__text">
+                                    Everyone experiences stress in different ways. Let Alivio guide you, in a personalized journal
+                                    experience, to overcome your stress.
+                                </div>
+                                <a href="#" class="fullscreen__btn btn">Find Your Way</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-fulscreen class="fullscreen__bg-ibg">
+                        <img src="@img/bg.jpg" alt="background" />
+                    </div>
+                </section>
+
+                <section class="page__works works">
+                    <div class="works__container">
+                        <div class="works__top" data-watch data-watch-once>
+                            <div class="works__column-top top-title">
+                                <h2 class="top-title__subtile">How it works</h2>
+                                <h3 class="top-title__title">Understand & Release the stress in 3 steps</h3>
+                            </div>
+                            <p class="works__column-top top-text">
+                                Alivio offers as many journals it takes, tackling different areas such as anxiety,
+                                overwhelmedness, sadness, or anger, and a variety of personal causes, to help you become aware of
+                                your emotions, and guide you in how to manage stress.
+                            </p>
+                        </div>
+                        <div class="works__body">
+                            <article class="works__column-bottom column-bottom column-bottom_1" data-watch data-watch-once>
+                                <div class="column-bottom__content">
+                                    <div class="column-bottom__top">
+                                        <div class="column-bottom__number">01</div>
+                                        <h4 class="column-bottom__subtitle">Personalize</h4>
+                                    </div>
+                                    <p class="column-bottom__text">
+                                        Answer a quick survey about how you express yourself, what causes you stress, and what
+                                        area would you like to work on. This way, we can fully personalize your journal!
+                                    </p>
+                                </div>
+                                <div class="column-bottom__image-ibg">
+                                    <img src="@img/content/01.jpg" alt="Personalize" />
+                                </div>
+                            </article>
+                            <article class="works__column-bottom column-bottom column-bottom_2" data-watch data-watch-once>
+                                <div class="column-bottom__content">
+                                    <div class="column-bottom__top">
+                                        <div class="column-bottom__number">02</div>
+                                        <h4 class="column-bottom__subtitle">Write & Understand</h4>
+                                    </div>
+                                    <p class="column-bottom__text">
+                                        Write, draw, reflect, understand. Alivio will guide you through the prompts and will help
+                                        you manage your stress!
+                                    </p>
+                                </div>
+                                <div class="column-bottom__image-ibg">
+                                    <img src="@img/content/02.png" alt="Write & Understand" />
+                                </div>
+                            </article>
+                            <article class="works__column-bottom column-bottom column-bottom_3" data-watch data-watch-once>
+                                <div class="column-bottom__content">
+                                    <div class="column-bottom__top">
+                                        <div class="column-bottom__number">03</div>
+                                        <h4 class="column-bottom__subtitle">Alivio!</h4>
+                                    </div>
+                                    <p class="column-bottom__text">
+                                        Now you are aware, and have a way to manage and overcome your own stress. What are you
+                                        waiting for? Alivio today!
+                                    </p>
+                                </div>
+                                <div class="column-bottom__image-ibg">
+                                    <img src="@img/content/03.jpg" alt="Alivio!" />
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page__video video">
+                    <div class="video__info info-video" data-watch data-watch-once>
+                        <h2 class="info-video__title">Let's hear about Kayla's success story</h2>
+                        <p class="info-video__text">See how well Alivio works in a real customer’s life.</p>
+                        <a href="#" class="info-video__btn btn">Let’s get started</a>
+                    </div>
+                    <div class="video__player player-video" data-watch data-watch-once>
+                        <div class="player-video__video-wrap">
+                            <video class="player-video__video" preload="metadata" id="video-file">
+                                <source type="video/webm" id="source-webm" src="videos/video.webm" />
+                                <source type="video/mp4" id="source-mp4" src="videos/video.mp4" />
+                            </video>
+                        </div>
+                        <div class="player-video__thumbnail">
+                            <div class="player-video__cover-ibg">
+                                <img src="@img/video.jpg" alt="video thumbnail" />
+                            </div>
+                            <div class="player-video__control">
+                                <button type="button" class="player-video__control-icon">
+                                    <img src="@img/play-white.svg" alt="play button" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page__product product">
+                    <div class="product__container">
+                        <div class="product__column column-product-image" data-watch data-watch-once>
+                            <div class="column-product-image__image-ibg">
+                                <img src="@img/avatar.png" alt="Avatar" />
+                            </div>
+                            <div class="column-product-image__body">
+                                <h4 class="column-product-image__title">Customized For</h4>
+                                <div class="column-product-image__avatar-ibg">
+                                    <img src="@img/avatar.png" alt="avatar" />
+                                </div>
+                                <div class="column-product-image__name">Mikayla</div>
+                                <ul class="column-product-image__list">
+                                    <div class="column-product-image__subtitle">Your custom contents</div>
+                                    <li class="column-product-image__item">• Understand Your Stress</li>
+                                    <li class="column-product-image__item">• Anger Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product__column column-product-info" data-watch data-watch-once>
+                            <div class="column-product-info__body">
+                                <h3 class="column-product-info__subtitle">Our product</h3>
+                                <h2 class="column-product-info__title">You tell us your stress, We make your diary</h2>
+                                <p class="column-product-info__text">
+                                    Everyone experiences it, and in different ways. Let Alivio guide you, in a personalized
+                                    journal experience, to overcome your stress.
+                                </p>
+                                <a href="#" class="column-product-info__btn btn">Find Your Way</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_js.htm',{})
+    </body>
 </html>

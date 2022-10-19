@@ -1,6 +1,3 @@
-// Подключение списка активных модулей
-import { flsModules } from "./modules.js";
-
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
     // Проверка поддержки webp
@@ -36,10 +33,20 @@ export let isMobile = {
         return navigator.userAgent.match(/IEMobile/i);
     },
     any: function () {
-        return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        return (
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows()
+        );
     },
 };
 
+export function addTouchClass() {
+    // Добавление класса _touch для HTML если браузер мобильный
+    if (isMobile.any()) document.documentElement.classList.add("touch");
+}
 // Учет плавающей панели на мобильных устройствах при 100vh
 export function fullVHfix() {
     const fullScreens = document.querySelectorAll("[data-fullscreen]");
@@ -97,10 +104,7 @@ export let bodyLock = (delay = 500) => {
     }
 };
 // Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
-/*
-Документация по работе в шаблоне: https://template.fls.guru/template-docs/menu-burger.html
-Сниппет (HTML): menu
-*/
+
 export function menuInit() {
     if (document.querySelector(".icon-menu")) {
         document.addEventListener("click", function (e) {

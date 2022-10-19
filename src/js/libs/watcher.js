@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, uniqArray } from "../files/functions.js";
+import { uniqArray } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
 
 // Наблюдатель объектов [всевидещее око]
@@ -115,11 +115,15 @@ class ScrollWatcher {
         if (entry.isIntersecting) {
             // Видим объект
             // Добавляем класс
-            !targetElement.classList.contains("_watcher-view") ? targetElement.classList.add("_watcher-view") : null;
+            !targetElement.classList.contains("_watcher-view")
+                ? targetElement.classList.add("_watcher-view")
+                : null;
         } else {
             // Не видим объект
             // Убираем класс
-            targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
+            targetElement.classList.contains("_watcher-view")
+                ? targetElement.classList.remove("_watcher-view")
+                : null;
         }
     }
     // Функция отключения слежения за объектом
